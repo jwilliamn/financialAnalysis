@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../webCrawler/empleatron-app/crawler/JobCrawler/.idea/JobCrawler.iml" filepath="$PROJECT_DIR$/../../webCrawler/empleatron-app/crawler/JobCrawler/.idea/JobCrawler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/financialCrawler.iml" filepath="$PROJECT_DIR$/.idea/financialCrawler.iml" />
+      <module fileurl="file://$USER_HOME$/Documents/Python/webCrawling/tutorial/.idea/tutorial.iml" filepath="$USER_HOME$/Documents/Python/webCrawling/tutorial/.idea/tutorial.iml" />
+    </modules>
+  </component>
+</project>
+
