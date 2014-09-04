@@ -20,6 +20,7 @@ class yahooItem(Item):
     revenue = Field()
     grossProfit = Field()
     operatingIncome = Field()
+    
     netIncome = Field()
 
     totalAssets = Field()
@@ -30,5 +31,9 @@ class yahooItem(Item):
 
 
     #data_required = Field()
+<<<<<<< HEAD
 
     pass
+=======
+    pass
+>>>>>>> 1508d57def69748f27ab648b4cbaf8fd5fb0388c

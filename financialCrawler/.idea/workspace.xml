@@ -49,8 +49,8 @@
       <file leaf-file-name="yahooSpider.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/financialCrawler/spiders/yahooSpider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9262899" vertical-offset="1363" max-vertical-offset="1830">
-              <caret line="116" column="19" selection-start-line="0" selection-start-column="0" selection-end-line="116" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.2997543" vertical-offset="1423" max-vertical-offset="1830">
+              <caret line="103" column="46" selection-start-line="103" selection-start-column="46" selection-end-line="103" selection-end-column="46" />
               <folding>
                 <element signature="e#68#100#0" expanded="true" />
               </folding>
@@ -867,8 +867,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/financialCrawler/spiders/yahooSpider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9262899" vertical-offset="1363" max-vertical-offset="1830">
-          <caret line="116" column="19" selection-start-line="0" selection-start-column="0" selection-end-line="116" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.2997543" vertical-offset="1423" max-vertical-offset="1830">
+          <caret line="103" column="46" selection-start-line="103" selection-start-column="46" selection-end-line="103" selection-end-column="46" />
           <folding>
             <element signature="e#68#100#0" expanded="true" />
           </folding>
