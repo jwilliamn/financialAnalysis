@@ -6,18 +6,9 @@
 from scrapy.item import Item, Field
 
 class bvlItem(Item):
+    # define the fields for your item here like:
+    # name = Field()
     title = Field()
     company = Field()
     url = Field()
-    pass
-
-class yahooItem(Item):
-    company = Field()
-    url = Field()
-    revenue = Field()
-    grossProfit = Field()
-    operatinIncome = Field()
-    netIncome = Field()
-
-    #data_required = Field()
     pass

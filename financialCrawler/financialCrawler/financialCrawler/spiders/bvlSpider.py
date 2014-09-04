@@ -20,7 +20,8 @@ class BvlSpider(Spider):
 
     def parse(self, response):
         sel = Selector(response)
-        link = sel.xpath('//div[@id="divTabla_Empresas"]/table/tbody/tr[30]/td')
+        link = sel.xpath('//td[@class="divABC"]')
+
         items = []
 
         for site in link:
