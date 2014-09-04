@@ -28,12 +28,5 @@ class yahooItem(Item):
     totalSHEquity = Field()
     netTangibleAs = Field()
 
-
-
     #data_required = Field()
-<<<<<<< HEAD
-
     pass
-=======
-    pass
->>>>>>> 1508d57def69748f27ab648b4cbaf8fd5fb0388c

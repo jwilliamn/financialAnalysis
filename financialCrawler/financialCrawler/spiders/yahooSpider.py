@@ -71,8 +71,6 @@ class YahooSpider(Spider):
                 #year2013 = d.xpath('tr[1]/th[1]/text()').extract()
                 #year2012 = d.xpath('tr[1]/th[2]/text()').extract()
                 #year2011 = d.xpath('tr[1]/th[3]/text()').extract()
-
-<<<<<<< HEAD
                 for tab in range(2,5):
                     revenue = d.xpath('tr[2]/td['+str(tab)+']/strong/text()').extract()
                     grossProfit = d.xpath('tr[5]/td['+str(tab)+']/strong/text()').extract()
@@ -83,32 +81,6 @@ class YahooSpider(Spider):
                     financial.append(grossProfit)
                     financial.append(operatingIncome)
                     financial.append(netIncome)
-=======
-                revenue2013 = d.xpath('tr[2]/td[2]/strong/text()').extract()
-                revenue2012 = d.xpath('tr[2]/td[3]/strong/text()').extract()
-                revenue2011 = d.xpath('tr[2]/td[4]/strong/text()').extract()
-
-                grossProfit2013 = d.xpath('tr[5]/td[2]/strong/text()').extract()
-                grossProfit2012 = d.xpath('tr[5]/td[3]/strong/text()').extract()
-                grossProfit2011 = d.xpath('tr[5]/td[4]/strong/text()').extract()
-
-                operatingIncome2013 = d.xpath('tr[16]/td[2]/strong/text()').extract()
-                operatingIncome2012 = d.xpath('tr[16]/td[3]/strong/text()').extract()
-                operatingIncome2011 = d.xpath('tr[16]/td[4]/strong/text()').extract()
-
-                netIncome2013 = d.xpath('tr[35]/td[2]/strong/text()').extract()
-                netIncome2012 = d.xpath('tr[35]/td[3]/strong/text()').extract()
-                netIncome2011 = d.xpath('tr[35]/td[4]/strong/text()').extract()
-
-                item['revenue']=[revenue2013,revenue2012,revenue2011]
-                item['grossProfit']=[grossProfit2013,grossProfit2012,grossProfit2011]
-		item['operatingIncome']=[operatingIncome2013,operatingIncome2012,operatingIncome2011]
-		
-                financial.append(revenue2013)
-                financial.append(grossProfit2013)
-                financial.append(operatingIncome2013)
-                financial.append(netIncome2013)
->>>>>>> 1508d57def69748f27ab648b4cbaf8fd5fb0388c
 
             if data_finance == "bs":
                 print "Balance Sheet!!"
