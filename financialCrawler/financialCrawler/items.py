@@ -17,16 +17,5 @@ class yahooItem(Item):
 
     rawData = Field()
 
-    revenue = Field()
-    grossProfit = Field()
-    operatingIncome = Field()
-    
-    netIncome = Field()
-
-    totalAssets = Field()
-    totalLiabilities = Field()
-    totalSHEquity = Field()
-    netTangibleAs = Field()
-
     #data_required = Field()
     pass
