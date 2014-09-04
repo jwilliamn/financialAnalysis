@@ -14,10 +14,21 @@ class bvlItem(Item):
 class yahooItem(Item):
     company = Field()
     url = Field()
+
+    rawData = Field()
+
     revenue = Field()
     grossProfit = Field()
     operatingIncome = Field()
     netIncome = Field()
 
+    totalAssets = Field()
+    totalLiabilities = Field()
+    totalSHEquity = Field()
+    netTangibleAs = Field()
+
+
+
     #data_required = Field()
+
     pass

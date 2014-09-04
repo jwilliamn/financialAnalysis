@@ -1,4 +1,3 @@
-# __author__ = 'williamn'
 # yahooSpider crawl Fortune 500 companies' listed on Yahoo finance
 
 from scrapy.spider import Spider
@@ -18,6 +17,7 @@ def clean_data(finance):
     return finance
 
 
+# __author__ = 'williamn'
 # Spider Beginning
 class YahooSpider(Spider):
     name = "yahooSpider"
@@ -72,75 +72,46 @@ class YahooSpider(Spider):
                 #year2012 = d.xpath('tr[1]/th[2]/text()').extract()
                 #year2011 = d.xpath('tr[1]/th[3]/text()').extract()
 
-                revenue2013 = d.xpath('tr[2]/td[2]/strong/text()').extract()
-                revenue2012 = d.xpath('tr[2]/td[3]/strong/text()').extract()
-                revenue2011 = d.xpath('tr[2]/td[4]/strong/text()').extract()
+                for tab in range(2,5):
+                    revenue = d.xpath('tr[2]/td['+str(tab)+']/strong/text()').extract()
+                    grossProfit = d.xpath('tr[5]/td['+str(tab)+']/strong/text()').extract()
+                    operatingIncome = d.xpath('tr[16]/td['+str(tab)+']/strong/text()').extract()
+                    netIncome = d.xpath('tr[35]/td['+str(tab)+']/strong/text()').extract()
 
-                grossProfit2013 = d.xpath('tr[5]/td[2]/strong/text()').extract()
-                grossProfit2012 = d.xpath('tr[5]/td[3]/strong/text()').extract()
-                grossProfit2011 = d.xpath('tr[5]/td[4]/strong/text()').extract()
-
-                operatingIncome2013 = d.xpath('tr[16]/td[2]/strong/text()').extract()
-                operatingIncome2012 = d.xpath('tr[16]/td[3]/strong/text()').extract()
-                operatingIncome2011 = d.xpath('tr[16]/td[4]/strong/text()').extract()
-
-                netIncome2013 = d.xpath('tr[35]/td[2]/strong/text()').extract()
-                netIncome2012 = d.xpath('tr[35]/td[3]/strong/text()').extract()
-                netIncome2011 = d.xpath('tr[35]/td[4]/strong/text()').extract()
-
-                item['revenue']=[revenue2013,revenue2012,revenue2011]
-                item['grossProfit']=[grossProfit2013,grossProfit2012,grossProfit2011]
-
-                financial.append(revenue2013)
-                financial.append(grossProfit2013)
-                financial.append(operatingIncome2013)
-                financial.append(netIncome2013)
+                    financial.append(revenue)
+                    financial.append(grossProfit)
+                    financial.append(operatingIncome)
+                    financial.append(netIncome)
 
             if data_finance == "bs":
                 print "Balance Sheet!!"
-                totalAssets2013 = d.xpath('tr[20]/td[2]/strong/text()').extract()
-                totalAssets2012 = d.xpath('tr[20]/td[3]/strong/text()').extract()
-                totalAssets2011 = d.xpath('tr[20]/td[4]/strong/text()').extract()
 
-                totalLiabilities2013 = d.xpath('tr[35]/td[2]/strong/text()').extract()
-                totalLiabilities2012 = d.xpath('tr[35]/td[3]/strong/text()').extract()
-                totalLiabilities2011 = d.xpath('tr[35]/td[4]/strong/text()').extract()
+                for tab in range(2,5):
+                    totalAssets = d.xpath('tr[20]/td['+str(tab)+']/strong/text()').extract()
+                    totalLiabilities = d.xpath('tr[35]/td['+str(tab)+']/strong/text()').extract()
+                    totalSHEquity= d.xpath('tr[47]/td['+str(tab)+']/strong/text()').extract()
+                    netTangibleAs = d.xpath('tr[49]/td['+str(tab)+']/strong/text()').extract()
 
-                totalSHEquity2013 = d.xpath('tr[47]/td[2]/strong/text()').extract()
-                totalSHEquity2012 = d.xpath('tr[47]/td[3]/strong/text()').extract()
-                totalSHEquity2011 = d.xpath('tr[47]/td[4]/strong/text()').extract()
-
-                netTangibleAs2013 = d.xpath('tr[49]/td[2]/strong/text()').extract()
-                netTangibleAs2012 = d.xpath('tr[49]/td[3]/strong/text()').extract()
-                netTangibleAs2011 = d.xpath('tr[49]/td[4]/strong/text()').extract()
-
-                financial.append(totalAssets2013)
-                financial.append(totalLiabilities2013)
-                financial.append(totalSHEquity2013)
-                financial.append(netTangibleAs2013)
+                    financial.append(totalAssets)
+                    financial.append(totalLiabilities)
+                    financial.append(totalSHEquity)
+                    financial.append(netTangibleAs)
 
             if data_finance=="cf":
                 print "Cash Flow xD!"
-                totalCFOA2013 = d.xpath('tr[12]/td[2]/strong/text()').extract()
-                totalCFOA2012 = d.xpath('tr[12]/td[3]/strong/text()').extract()
-                totalCFOA2011 = d.xpath('tr[12]/td[4]/strong/text()').extract()
 
-                totalCFIA2013 = d.xpath('tr[19]/td[2]/strong/text()').extract()
-                totalCFIA2012 = d.xpath('tr[19]/td[3]/strong/text()').extract()
-                totalCFIA2011 = d.xpath('tr[19]/td[4]/strong/text()').extract()
+                for tab in range(2,5):
+                    totalCFOA = d.xpath('tr[12]/td['+str(tab)+']/strong/text()').extract()
+                    totalCFIA = d.xpath('tr[19]/td['+str(tab)+']/strong/text()').extract()
+                    totalCFFA = d.xpath('tr[27]/td['+str(tab)+']/strong/text()').extract()
+                    changeCash = d.xpath('tr[30]/td['+str(tab)+']/strong/text()').extract()
 
-                totalCFFA2013 = d.xpath('tr[27]/td[2]/strong/text()').extract()
-                totalCFFA2012 = d.xpath('tr[27]/td[3]/strong/text()').extract()
-                totalCFFA2011 = d.xpath('tr[27]/td[4]/strong/text()').extract()
+                    financial.append(totalCFOA)
+                    financial.append(totalCFIA)
+                    financial.append(totalCFFA)
+                    financial.append(changeCash)
 
-                changeCash2013 = d.xpath('tr[30]/td[2]/strong/text()').extract()
-                changeCash2012 = d.xpath('tr[30]/td[3]/strong/text()').extract()
-                changeCash2011 = d.xpath('tr[30]/td[4]/strong/text()').extract()
-
-                financial.append(totalCFOA2013)
-                financial.append(totalCFIA2013)
-                financial.append(totalCFFA2013)
-                financial.append(changeCash2013)
-        financial_temp = clean_data(financial)
+        item['rawData'] = financial
+        #financial_temp = financial
 
         return item
