@@ -90,7 +90,8 @@ class YahooSpider(Spider):
 
                 item['revenue']=[revenue2013,revenue2012,revenue2011]
                 item['grossProfit']=[grossProfit2013,grossProfit2012,grossProfit2011]
-				item['operatingIncome']=[operatingIncome2013,operatingIncome2012,operatingIncome2011]
+		item['operatingIncome']=[operatingIncome2013,operatingIncome2012,operatingIncome2011]
+		
                 financial.append(revenue2013)
                 financial.append(grossProfit2013)
                 financial.append(operatingIncome2013)
