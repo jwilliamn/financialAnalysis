@@ -16,7 +16,7 @@ class yahooItem(Item):
     url = Field()
     revenue = Field()
     grossProfit = Field()
-    operatinIncome = Field()
+    operatingIncome = Field()
     netIncome = Field()
 
     #data_required = Field()

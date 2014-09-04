@@ -30,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/financialCrawler/items.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -49,8 +49,8 @@
       <file leaf-file-name="yahooSpider.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/financialCrawler/spiders/yahooSpider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8058968" vertical-offset="1022" max-vertical-offset="2250">
-              <caret line="90" column="69" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="69" />
+            <state vertical-scroll-proportion="0.36609337" vertical-offset="1216" max-vertical-offset="2265">
+              <caret line="91" column="85" selection-start-line="91" selection-start-column="85" selection-end-line="91" selection-end-column="85" />
               <folding>
                 <element signature="e#94#126#0" expanded="true" />
               </folding>
@@ -90,8 +90,8 @@
       <list>
         <option value="$PROJECT_DIR$/financialCrawler/spiders/bvlSpider.py" />
         <option value="$PROJECT_DIR$/../../webCrawler/empleatron-app/crawler/JobCrawler/JobCrawler/spiders/bumeranSpiderDay.py" />
-        <option value="$PROJECT_DIR$/financialCrawler/spiders/yahooSpider.py" />
         <option value="$PROJECT_DIR$/financialCrawler/items.py" />
+        <option value="$PROJECT_DIR$/financialCrawler/spiders/yahooSpider.py" />
       </list>
     </option>
   </component>
@@ -860,15 +860,15 @@
     <entry file="file://$PROJECT_DIR$/financialCrawler/items.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/financialCrawler/spiders/yahooSpider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8058968" vertical-offset="1022" max-vertical-offset="2250">
-          <caret line="90" column="69" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="69" />
+        <state vertical-scroll-proportion="0.36609337" vertical-offset="1216" max-vertical-offset="2265">
+          <caret line="91" column="85" selection-start-line="91" selection-start-column="85" selection-end-line="91" selection-end-column="85" />
           <folding>
             <element signature="e#94#126#0" expanded="true" />
           </folding>

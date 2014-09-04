@@ -89,6 +89,7 @@ class YahooSpider(Spider):
                 netIncome2011 = d.xpath('tr[35]/td[4]/strong/text()').extract()
 
                 item['revenue']=[revenue2013,revenue2012,revenue2011]
+                item['grossProfit']=[grossProfit2013,grossProfit2012,grossProfit2011]
 
                 financial.append(revenue2013)
                 financial.append(grossProfit2013)
