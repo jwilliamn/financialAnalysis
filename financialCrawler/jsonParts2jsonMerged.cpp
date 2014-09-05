@@ -115,16 +115,16 @@ int main(){
 				M[idx][fact4*4+(k/4)*12+k%4+2]=data[k];
 				
 	}
-	cout<<"company Name\tid\t";
+	cout<<"company Name,id,";
 	for(int i=2013;i>=2011;i--){
-		cout<<"totalCFOA"<<i<<"\ttotalCFIA"<<i<<"\ttotalCFFA"<<i<<"\tChangeCash"<<i<<"\t";
-		cout<<"totalAssets"<<i<<"\tTotalLIabilities"<<i<<"\ttotalSHEQUITY"<<i<<"\tnetTangibleAssets"<<i<<"\t";
-		cout<<"Revenue"<<i<<"\tGrossProfit"<<i<<"\tOperatingIncome"<<i<<"\tNetIncome"<<i<<"\t";
+		cout<<"totalCFOA"<<i<<",totalCFIA"<<i<<",totalCFFA"<<i<<",ChangeCash"<<i<<",";
+		cout<<"totalAssets"<<i<<",TotalLIabilities"<<i<<",totalSHEQUITY"<<i<<",netTangibleAssets"<<i<<",";
+		cout<<"Revenue"<<i<<",GrossProfit"<<i<<",OperatingIncome"<<i<<",NetIncome"<<i<<",";
 	}
 	cout<<endl;
 	for(int i=0;i<M.size();i++){
 		for(int j=0;j<M[i].size();j++){
-			cout<<M[i][j]<<"\t";
+			cout<<M[i][j]<<",";
 		}
 		cout<<endl;
 	}

@@ -55,10 +55,7 @@ class YahooSpider(Spider):
 
         index_interrogation = item['url'].find("?")
         data_finance = item['url'][index_interrogation - 2: index_interrogation]
-<<<<<<< HEAD
-=======
 
->>>>>>> 71aa4bc9c62de657258bf1f2686051830dde648f
         financial = []
 
         for d in data:
@@ -112,11 +109,6 @@ class YahooSpider(Spider):
                     financial.append(totalCFFA)
                     financial.append(changeCash)
 
-<<<<<<< HEAD
-        financial_temp = clean_data(financial)
-        item['rawData'] = financial_temp
-=======
->>>>>>> 71aa4bc9c62de657258bf1f2686051830dde648f
 
         financial_temp = clean_data(financial)
         item['rawData'] = financial_temp
