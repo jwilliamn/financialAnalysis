@@ -39,17 +39,6 @@ class YahooSpider(Spider):
             item['url'] = URL_BASE + links[site]
             item['company'] = str(''.join(company))
             request = Request(url=item['url'], callback=self.parseFinance)
-
-            #if 'data_required' in item:
-            #    temp = item['data_required']
-            #    temp.extend(financial_temp)
-            #    item['data_required'] = temp
-            #else:
-            #    item['data_required'] = financial_temp
-
-            #item['data_required'] = clean_data(item['data_required'])
-
-            #item['data_required'] = list(set(item['data_required']))
             request.meta['item'] = item
             requests.append(request)
 
@@ -62,8 +51,7 @@ class YahooSpider(Spider):
 
         index_interrogation = item['url'].find("?")
         data_finance = item['url'][index_interrogation - 2: index_interrogation]
-        global financial, financial_temp
-        #financial = []
+        financial = []
 
         for d in data:
             if data_finance == "is":
@@ -110,7 +98,7 @@ class YahooSpider(Spider):
                     financial.append(totalCFFA)
                     financial.append(changeCash)
 
-        item['rawData'] = financial
-        #financial_temp = financial
+        financial_temp = clean_data(financial)
+        item['rawData'] = financial_temp
 
         return item
