@@ -6,7 +6,10 @@ from scrapy.http import Request
 from financialCrawler.items import yahooItem
 
 URL_BASE = "http://finance.yahoo.com"
-companies = ["EXC"]
+companies = ["EXC","DUK","SO","AES","PCG","AEP","NEE","FE","D","EIX","ED","PPL","ETR",
+             "XEL","SRE","PEG","DTE","CNP","NU","AEE","CMS","NI","TEG","GAS","WEC","SCG",
+             "POM","ATO","PNW","LNT","HE","OGE","TE","VVC","GXP","WR", "SWX"]
+
 financial = []
 financial_temp = []
 
@@ -42,6 +45,7 @@ class YahooSpider(Spider):
             request.meta['item'] = item
             requests.append(request)
 
+        print len(requests)+1000
         return requests
 
     def parseFinance(self, response):
@@ -51,6 +55,10 @@ class YahooSpider(Spider):
 
         index_interrogation = item['url'].find("?")
         data_finance = item['url'][index_interrogation - 2: index_interrogation]
+<<<<<<< HEAD
+=======
+
+>>>>>>> 71aa4bc9c62de657258bf1f2686051830dde648f
         financial = []
 
         for d in data:
@@ -59,11 +67,15 @@ class YahooSpider(Spider):
                 #year2013 = d.xpath('tr[1]/th[1]/text()').extract()
                 #year2012 = d.xpath('tr[1]/th[2]/text()').extract()
                 #year2011 = d.xpath('tr[1]/th[3]/text()').extract()
+
+                print "Revenue GrossProfit OperatingIncome NetIncome"
+
                 for tab in range(2,5):
                     revenue = d.xpath('tr[2]/td['+str(tab)+']/strong/text()').extract()
                     grossProfit = d.xpath('tr[5]/td['+str(tab)+']/strong/text()').extract()
                     operatingIncome = d.xpath('tr[16]/td['+str(tab)+']/strong/text()').extract()
                     netIncome = d.xpath('tr[35]/td['+str(tab)+']/strong/text()').extract()
+
 
                     financial.append(revenue)
                     financial.append(grossProfit)
@@ -72,6 +84,8 @@ class YahooSpider(Spider):
 
             if data_finance == "bs":
                 print "Balance Sheet!!"
+
+                print "totalAssets TotalLIabilities totalSHEQUITY netTangibleAssets"
 
                 for tab in range(2,5):
                     totalAssets = d.xpath('tr[20]/td['+str(tab)+']/strong/text()').extract()
@@ -86,7 +100,7 @@ class YahooSpider(Spider):
 
             if data_finance=="cf":
                 print "Cash Flow xD!"
-
+                print "totalCFOA totalCFIA totalCFFA ChangeCash"
                 for tab in range(2,5):
                     totalCFOA = d.xpath('tr[12]/td['+str(tab)+']/strong/text()').extract()
                     totalCFIA = d.xpath('tr[19]/td['+str(tab)+']/strong/text()').extract()
@@ -98,7 +112,12 @@ class YahooSpider(Spider):
                     financial.append(totalCFFA)
                     financial.append(changeCash)
 
+<<<<<<< HEAD
         financial_temp = clean_data(financial)
         item['rawData'] = financial_temp
+=======
+>>>>>>> 71aa4bc9c62de657258bf1f2686051830dde648f
 
+        financial_temp = clean_data(financial)
+        item['rawData'] = financial_temp
         return item
