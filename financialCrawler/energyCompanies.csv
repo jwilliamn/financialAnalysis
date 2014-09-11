@@ -1,4 +1,0 @@
-url,company,rawData
-http://finance.yahoo.com/q/bs?s=EXC+Balance+Sheet&annual,Exelon Corporation (EXC),"[79924000, 56999000, 22925000, 20300000, 78561000, 56850000, 21624000, 18999000, 54995000, 40523000, 14385000, 11760000]"
-http://finance.yahoo.com/q/cf?s=EXC+Cash+Flow&annual,Exelon Corporation (EXC),"[6343000, 5394000, 826000, 123000, 6131000, 4576000, 1085000, 470000, 4853000, 4603000, 846000, 596000]"
-http://finance.yahoo.com/q/is?s=EXC+Income+Statement&annual,Exelon Corporation (EXC),"[24888000, 6894000, 3656000, 1729000, 23489000, 5371000, 2380000, 1069000, 19063000, 6612000, 4479000, 2494000]"
