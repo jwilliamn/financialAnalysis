@@ -68,29 +68,53 @@ class YahooSpider(Spider):
                 print "Revenue GrossProfit OperatingIncome NetIncome"
 
                 for tab in range(2,5):
-                    revenue = d.xpath('tr[2]/td['+str(tab)+']/strong/text()').extract()
+                    revenue = d.xpath('tr[2]/td['+str(tab)+']/strong/text()').extract()  # Equivalent to sales
+                    costOfRevenue = d.xpath('tr[3]/td['+str(tab)+']/text()').extract()  # Cost of goods sold
                     grossProfit = d.xpath('tr[5]/td['+str(tab)+']/strong/text()').extract()
                     operatingIncome = d.xpath('tr[16]/td['+str(tab)+']/strong/text()').extract()
+                    earningsBIT = d.xpath('tr[20]/td['+str(tab+1)+']/text()').extract()  # Earnings before interest and taxes
+                    interestExpense = d.xpath('tr[21]/td['+str(tab+1)+']/text()').extract()  # Interest expenses
                     netIncome = d.xpath('tr[35]/td['+str(tab)+']/strong/text()').extract()
 
 
                     financial.append(revenue)
+                    financial.append(costOfRevenue)
                     financial.append(grossProfit)
                     financial.append(operatingIncome)
+                    financial.append(earningsBIT)
+                    financial.append(interestExpense)
                     financial.append(netIncome)
 
             if data_finance == "bs":
                 print "Balance Sheet!!"
 
-                print "totalAssets TotalLIabilities totalSHEQUITY netTangibleAssets"
+                print "totalAssets TotalLiabilities totalSHEQUITY netTangibleAssets"
 
                 for tab in range(2,5):
+                    cashEquivalents = d.xpath('tr[5]/td['+str(tab+1)+']/text()').extract()  # Cash and cash equivalents
+                    netReceivables = d.xpath('tr[7]/td['+str(tab+1)+']/text()').extract()  # Net receivables or account receivables
+                    inventory = d.xpath('tr[8]/td['+str(tab+1)+']/text()').extract()  # Inventory
+                    currentAssets = d.xpath('tr[11]/td['+str(tab)+']/strong/text()').extract()  # Total current assets
+                    longTermInvestments = d.xpath('tr[12]/td['+str(tab)+']/text()').extract()  # Long term assets
+                    fixedAssets = d.xpath('tr[13]/td['+str(tab)+']/text()').extract()  # Property plant and Equipment
                     totalAssets = d.xpath('tr[20]/td['+str(tab)+']/strong/text()').extract()
+                    shortTermDebt = d.xpath('tr[25]/td['+str(tab+1)+']/text()').extract()  # Short/current term debt
+                    currentLiabilities = d.xpath('tr[28]/td['+str(tab)+']/strong/text()').extract()  # Total current liabilities
+                    longTermDebt = d.xpath('tr[29]/td['+str(tab)+']/text()').extract()  # Long term debt
                     totalLiabilities = d.xpath('tr[35]/td['+str(tab)+']/strong/text()').extract()
                     totalSHEquity= d.xpath('tr[47]/td['+str(tab)+']/strong/text()').extract()
                     netTangibleAs = d.xpath('tr[49]/td['+str(tab)+']/strong/text()').extract()
 
+                    financial.append(cashEquivalents)
+                    financial.append(netReceivables)
+                    financial.append(inventory)
+                    financial.append(currentAssets)
+                    financial.append(longTermInvestments)
+                    financial.append(fixedAssets)
                     financial.append(totalAssets)
+                    financial.append(shortTermDebt)
+                    financial.append(currentLiabilities)
+                    financial.append(longTermDebt)
                     financial.append(totalLiabilities)
                     financial.append(totalSHEquity)
                     financial.append(netTangibleAs)

@@ -14,7 +14,6 @@ class bvlItem(Item):
 class yahooItem(Item):
     company = Field()
     url = Field()
-
     rawData = Field()
 
     #data_required = Field()

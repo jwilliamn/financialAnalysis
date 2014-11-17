@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/financialCrawler.iml" filepath="$PROJECT_DIR$/.idea/financialCrawler.iml" />
-      <module fileurl="file://$USER_HOME$/Documents/Python/webCrawling/tutorial/.idea/tutorial.iml" filepath="$USER_HOME$/Documents/Python/webCrawling/tutorial/.idea/tutorial.iml" />
     </modules>
   </component>
 </project>
