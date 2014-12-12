@@ -102,7 +102,7 @@ class YahooSpider(Spider):
                     currentLiabilities = d.xpath('tr[28]/td['+str(tab)+']/strong/text()').extract()  # Total current liabilities
                     longTermDebt = d.xpath('tr[29]/td['+str(tab)+']/text()').extract()  # Long term debt
                     totalLiabilities = d.xpath('tr[35]/td['+str(tab)+']/strong/text()').extract()
-                    totalSHEquity= d.xpath('tr[47]/td['+str(tab)+']/strong/text()').extract()
+                    totalSHEquity = d.xpath('tr[47]/td['+str(tab)+']/strong/text()').extract()
                     netTangibleAs = d.xpath('tr[49]/td['+str(tab)+']/strong/text()').extract()
 
                     financial.append(cashEquivalents)
