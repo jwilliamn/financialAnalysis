@@ -47,7 +47,7 @@ CAT<- revenue/currentAssets # currentAssetTurnonverRatio
 # Profitability ratios
 GPM<- grossProfit/revenue # grossProfitMargin
 EBI<- earningsBIT/revenue # ebitMargin
-NPM<- netIncome/revenue # netProfitMargin
+NPM<- netIncome/revenue # netProfitMargin ROS(returnOn Sales)
 REQ<- netIncome/totalSHEquity # returnOnEquity
 ROA<- netIncome/totalAssets # returnOnAssets
 
@@ -135,8 +135,8 @@ pc$scores # the principal componentes
 biplot(pc)
 
 # Factor analysis using Factanal (Maximun Likelihood factor analysis)
-fal<- factanal(Xn, 4, rotation="varimax") # this method has failed
-print(fal, cutoff=.3)
+# fal<- factanal(Xn, 4, rotation="varimax") # this method has failed
+# print(fal, cutoff=.3)
 
 # fa() procedure to perform factor analysis
 library(psych)
@@ -165,3 +165,31 @@ ap <- parallel(subject=nrow(Xn),var=ncol(Xn),
                rep=100,cent=.05)
 nS <- nScree(x=ev$values, aparallel=ap$eigen$qevpea)
 plotnScree(nS, main = "Non Graphical Solutions to Scree Test - nFactors")
+
+# Trees implementation
+
+XnFrame<- data.frame(Xn)
+ind<- sample(2, nrow(XnFrame), replace= TRUE, prob = c(0.7, 0.3))
+trainData<- XnFrame[ind==1,]
+testData<- XnFrame[ind==2,]
+formulaREQ<- REQ ~ QRA + LRA + CRA+ RTR+ ITR+NWR+ATR+ETR+FAT+LTA+CAT+GPM+EBI+NPM+ROA+CAS+ICU+CEQ+LTE+STF+STD+ICR+DER+LER+TFD
+fit1<- rpart(formulaREQ, method = "class", data=trainData)
+printcp(fit1)
+plotcp(fit1)
+summary(fit1)
+post(fit1, title = "Classification tree for energy companies")
+plot(fit1, uniform = TRUE, main = "Classification tree for energy companies")
+
+library(party)
+fit2<- ctree(formulaREQ, data=trainData)
+plot(fit2)
+
+library(randomForest)
+fit3<- randomForest(formulaREQ, data=trainData)
+print(fit3)
+plot(fit3)
+
+library(tree)
+fit4<- tree(formulaREQ, data=trainData)
+plot(fit4)
+text(fit4)
