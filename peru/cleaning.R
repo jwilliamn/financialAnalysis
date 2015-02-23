@@ -19,7 +19,7 @@ for(i in 1:68){
     tmp<- read.csv(listFiles[i])
     check <- rbind(check, c(i, dim(tmp)[1], dim(tmp)[2]))
 }
-
+check$X177L <- factor(check$X177L)
 # Subsetting the 3 different groups of variables found
 f177 <- check[check$X177L == 177,]
 f128 <- check[check$X177L == 128,]
