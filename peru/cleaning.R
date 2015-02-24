@@ -45,7 +45,10 @@ for(j in 1:dim(f127)[1]){
                       tmp$V27, tmp$V28, tmp$V38, tmp$V39, tmp$V41, tmp$V42, 
                       tmp$V43, tmp$V44, tmp$V51, tmp$V54, tmp$V61, tmp$V80, 
                       tmp$V1, tmp$V94, tmp$V107, tmp$V110, tmp$V112, tmp$V117)
-    colnames(arranged) <- c("year", "V2", "V3", "V5", "")
+    colnames(arranged) <- c("year", "V2", "V3", "V5", "V7", "V10", "V19", "V26", 
+                            "V27", "V34", "V35", "V38", "V39", "V40", "V37", "V47", 
+                            "Cpp", "V57", "V71", "V72", "V73", 
+                            "V79", "V85", "V86", "V91")
     write.table(arranged, file = name, sep = ",")
 }
 
