@@ -95,12 +95,130 @@ for(i in 1:80){
         if(ff[cc] == T){
             arranged[, cc] <- as.numeric(levels(arranged[, cc]))[arranged[, cc]]}
     }
-    write.table(arranged, file = name, sep = ",", quote = F)
+    write.table(arranged, file = name, sep = ",", quote = F, row.names = F)
+}
+
+# Preparing data to be the input data
+setwd('/home/williamn/Repository/financialAnalysis/peru')
+listFiles <- list.files("data", full.names = TRUE)
+
+check <- data.frame()
+for(i in 1:80){
+    tmp<- read.csv(listFiles[i])
+    check <- rbind(check, c(i, dim(tmp)[1], dim(tmp)[2]))
+}
+check$X28L <- factor(check$X28L)
+
+# subsetting
+f25 <- check[check$X28L == 25,] # antes f127
+f26 <- check[check$X28L == 26,] # antes f262
+f28 <- check[check$X28L == 28,] # antes f176
+
+m <- 1
+n <- 1
+p <- 1
+for(i in 1:80){
+    input <- data.frame()
+    name <- listFiles[i]
+    tmp <- read.csv(listFiles[i])
+    # 127
+    if(i == f25[m, 1] && m<dim(f25)[1]+1){
+        input <- cbind.data.frame(tmp$year, tmp$V2, tmp$V3, tmp$V5, tmp$V7, tmp$V10, tmp$V19, 
+                                     tmp$V26, tmp$V27, tmp$V34, tmp$V35, tmp$V38 + tmp$V39 + 
+                                     tmp$V40, tmp$V37, tmp$V47, tmp$Cpp, tmp$V57, tmp$V71, 
+                                     tmp$V72, tmp$V73, tmp$V79, tmp$V85, tmp$V86, tmp$V91)
+        colnames(input) <- c("year", "V2", "V3", "V5", "V7", "V10", "V19", "V26", 
+                                "V27", "V34", "V35", "Cppcp", "V37", "V47", 
+                                "Cpplp", "V57", "V71", "V72", "V73", 
+                                "V79", "V85", "V86", "V91")
+        m <- m+1
+    }
+    # f176
+    if(i == f28[n, 1] && n<dim(f28)[1]+1){
+        input <- cbind.data.frame(tmp$year, tmp$V2, tmp$V3, tmp$V5, tmp$V7, tmp$V10, tmp$V19, 
+                                     tmp$V26, tmp$V27, tmp$V34, tmp$V35, tmp$V38 + tmp$V39 + 
+                                     tmp$V40, tmp$V37, tmp$V47, tmp$V48 + tmp$V49 + tmp$V50 + 
+                                     tmp$V51, tmp$V57, tmp$V71, tmp$V72, tmp$V73, tmp$V79, 
+                                     tmp$V85, tmp$V86, tmp$V91)
+        colnames(input) <- c("year", "V2", "V3", "V5", "V7", "V10", "V19", "V26", 
+                                "V27", "V34", "V35", "Cppcp", "V37", "V47", 
+                                "Cpplp", "V57", "V71", "V72", "V73", 
+                                "V79", "V85", "V86", "V91")
+        n <- n+1
+    }
+    # f262
+    if(i == f26[p, 1] && p<dim(f26)[1]+1){
+        input <- cbind.data.frame(tmp$year, tmp$V2, tmp$V3, tmp$V5, tmp$V7, tmp$V10, tmp$V19, 
+                                     tmp$V26, tmp$V27, tmp$V34, tmp$V35, tmp$Cpp, tmp$V37, 
+                                     tmp$V47, tmp$V48 + tmp$V49 + tmp$V50 + tmp$V51, tmp$V57, 
+                                     tmp$V71, tmp$V72, tmp$V73, tmp$V79, tmp$V85, tmp$V86, 
+                                     tmp$V91)
+        colnames(input) <- c("year", "V2", "V3", "V5", "V7", "V10", "V19", "V26", 
+                                "V27", "V34", "V35", "Cppcp", "V37", "V47", "Cpplp", 
+                             "V57", "V71", "V72", "V73", "V79", "V85", "V86", 
+                                "V91")
+        p <- p+1
+    }
+    
+    write.table(input, file = name, sep = ",", quote = F, row.names = F)
+}
+
+# computing the financial ratios
+tmpfiles <- list.files("data")
+computeRatios <- function(ratios, tmp){
+    # Ratios
+    # Liquidity ratios
+    QRA <- (tmp$V3 - tmp$V10)/tmp$V35 # quick ratio
+    LRA <- tmp$V3/tmp$V35 # liquidity ratio
+    CRA <- tmp$V5/tmp$V35 # cash ratio
+    
+    # Asset utilization or turnover ratios
+    RTR <- tmp$V71/tmp$V7 # receivableTurnonverRatio
+    ITR <- tmp$V72/tmp$V10 # inventoryTurnonverRatio
+    NWR <- tmp$V71/(tmp$V3 - tmp$V35) # nwcTurnonverRatio
+    ATR <- tmp$V71/tmp$V2 # assetTurnonverRatio
+    ETR <- tmp$V71/tmp$V57 # equityTurnonverRatio
+    FAT <- tmp$V71/tmp$V26 # fixedAssetTurnonverRatio
+    LTA <- tmp$V71/tmp$V19 # longTermAssetTurnonverRatio
+    CAT <- tmp$V71/tmp$V3 # currentAssetTurnonverRatio
+    
+    # Profitability ratios
+    GPM <- tmp$V73/tmp$V71 # grossProfitMargin
+    EBI <- tmp$V85/tmp$V71 # ebitMargin
+    NPM <- tmp$V91/tmp$V71 # netProfitMargin ROS(returnOn Sales)
+    REQ <- tmp$V91/tmp$V57 # returnOnEquity
+    ROA <- tmp$V91/tmp$V2 # returnOnAssets
+    
+    # Asset structure ratios
+    CAS <- tmp$V3/tmp$V2 # currentAssetToTotalAssetRatio
+    ICU <- tmp$V10/tmp$V3 # inventoryToCurrentAssetRatio
+    CEQ <- tmp$V5/tmp$V3 # cashEquivToCurrentAssetRatio
+    LTE <- tmp$V19/tmp$V2 # longTermToAssetRatio
+    
+    # Solvency ratios
+    STF <- tmp$Cppcp/tmp$V34 # shortTermFinanDebtToTotalDebt
+    STD <- tmp$V35/tmp$V34 # shortTermDebtToTotalDebt
+    ICR <- tmp$V85/tmp$V86 # interestCoverageRatio
+    DER <- tmp$V34/tmp$V57 # debtRatio
+    LER <- tmp$V34/tmp$V2 # leverageRatio
+    TFD <- (tmp$Cppcp + tmp$Cpplp)/tmp$V34 # totalFinanDebtToTotalDebt
+    ratios <- cbind(QRA, LRA, CRA, RTR, ITR, NWR, ATR, ETR, FAT, LTA, CAT, GPM, EBI, NPM, 
+              REQ, ROA, CAS, ICU, CEQ, LTE, STF, STD, ICR, DER, LER, TFD)
+    ratios
+}
+
+for(i in 1:80){
+    ratios <- data.frame()
+    name <- tmpfile[i]
+    tmp <- read.csv(listFiles[i])
+    ratios <- computeRatios(ratios, tmp)
+    ratios <- cbind(tmp$year, ratios)
+    colnames(ratios) <- c("year", "QRA", "LRA", "CRA", "RTR", "ITR", "NWR", "ATR", 
+                          "ETR", "FAT", "LTA", "CAT", "GPM", "EBI", "NPM", "REQ", 
+                          "ROA", "CAS", "ICU", "CEQ", "LTE", "STF", "STD", "ICR", "DER", "LER", "TFD")
+    write.table(ratios, file = paste("cleanData/", name, sep = ""), sep = ",", quote = F, row.names = F)
 }
 
 # Further analysis for one company "Acumuladores Etna"
-netna <- read.csv('netna.csv')
-library(ggplot2)
-library(ggthemes)
 
-qplot(x = c(1:22), y =V71, data = netna)
+
