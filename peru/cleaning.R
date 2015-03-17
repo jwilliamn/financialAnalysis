@@ -1,7 +1,7 @@
 # Data cleaning
 
 setwd('/home/williamn/Repository/financialAnalysis/peru')
-listFiles <- list.files("data", full.names = TRUE)
+listFiles <- list.files("rawData", full.names = TRUE)
 
 for(i in 1:80){
     name <- listFiles[i]
@@ -98,10 +98,7 @@ for(i in 1:80){
     write.table(arranged, file = name, sep = ",", quote = F, row.names = F)
 }
 
-# Preparing data to be the input data
-setwd('/home/williamn/Repository/financialAnalysis/peru')
-listFiles <- list.files("data", full.names = TRUE)
-
+# Standarizing the files (same financial variables)
 check <- data.frame()
 for(i in 1:80){
     tmp<- read.csv(listFiles[i])
@@ -164,7 +161,7 @@ for(i in 1:80){
 }
 
 # computing the financial ratios
-tmpfiles <- list.files("data")
+tmpfile <- list.files("rawData")
 computeRatios <- function(ratios, tmp){
     # Ratios
     # Liquidity ratios
@@ -212,13 +209,11 @@ for(i in 1:80){
     name <- tmpfile[i]
     tmp <- read.csv(listFiles[i])
     ratios <- computeRatios(ratios, tmp)
-    ratios <- cbind(tmp$year, ratios)
-    colnames(ratios) <- c("year", "QRA", "LRA", "CRA", "RTR", "ITR", "NWR", "ATR", 
+    ratios <- cbind(tmp$year, rep(i, length(tmp$year)), ratios)
+    colnames(ratios) <- c("year", "id", "QRA", "LRA", "CRA", "RTR", "ITR", "NWR", "ATR", 
                           "ETR", "FAT", "LTA", "CAT", "GPM", "EBI", "NPM", "REQ", 
                           "ROA", "CAS", "ICU", "CEQ", "LTE", "STF", "STD", "ICR", "DER", "LER", "TFD")
     write.table(ratios, file = paste("cleanData/", name, sep = ""), sep = ",", quote = F, row.names = F)
 }
-
-# Further analysis for one company "Acumuladores Etna"
 
 
