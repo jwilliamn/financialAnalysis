@@ -12,7 +12,16 @@ for(i in 1:80){
 write.table(examples, file = "data.csv", sep = ",", quote = F, row.names = F)
 
 # Plot of different ratios for all companies
-data <- read.csv("data.csv")
-plot(data$ROA, data$REQ)
+datac <- read.csv("data.csv")
+
+library(ggplot2)
+library(ggthemes)
+
+ggplot(aes(x = ROA), data = datac) + 
+    geom_point(aes(y = REQ)) + 
+    theme_bw() + 
+    coord_cartesian(xlim = c(-0.25, 0.28), ylim = c(-0.5, 0.8)) + 
+    ggtitle("Exploratory analysis")
+
 
 
