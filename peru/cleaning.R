@@ -120,11 +120,11 @@ for(i in 1:80){
     tmp <- read.csv(listFiles[i])
     # 127
     if(i == f25[m, 1] && m<dim(f25)[1]+1){
-        input <- cbind.data.frame(tmp$year, tmp$V2, tmp$V3, tmp$V5, tmp$V7, tmp$V10, tmp$V19, 
+        input <- cbind.data.frame(tmp$year, rep("Insurance", length(tmp$year)), tmp$V2, tmp$V3, tmp$V5, tmp$V7, tmp$V10, tmp$V19, 
                                      tmp$V26, tmp$V27, tmp$V34, tmp$V35, tmp$V38 + tmp$V39 + 
                                      tmp$V40, tmp$V37, tmp$V47, tmp$Cpp, tmp$V57, tmp$V71, 
                                      tmp$V72, tmp$V73, tmp$V79, tmp$V85, tmp$V86, tmp$V91)
-        colnames(input) <- c("year", "V2", "V3", "V5", "V7", "V10", "V19", "V26", 
+        colnames(input) <- c("year", "Field", "V2", "V3", "V5", "V7", "V10", "V19", "V26", 
                                 "V27", "V34", "V35", "Cppcp", "V37", "V47", 
                                 "Cpplp", "V57", "V71", "V72", "V73", 
                                 "V79", "V85", "V86", "V91")
@@ -132,12 +132,12 @@ for(i in 1:80){
     }
     # f176
     if(i == f28[n, 1] && n<dim(f28)[1]+1){
-        input <- cbind.data.frame(tmp$year, tmp$V2, tmp$V3, tmp$V5, tmp$V7, tmp$V10, tmp$V19, 
+        input <- cbind.data.frame(tmp$year, rep("Manufacturing", length(tmp$year)), tmp$V2, tmp$V3, tmp$V5, tmp$V7, tmp$V10, tmp$V19, 
                                      tmp$V26, tmp$V27, tmp$V34, tmp$V35, tmp$V38 + tmp$V39 + 
                                      tmp$V40, tmp$V37, tmp$V47, tmp$V48 + tmp$V49 + tmp$V50 + 
                                      tmp$V51, tmp$V57, tmp$V71, tmp$V72, tmp$V73, tmp$V79, 
                                      tmp$V85, tmp$V86, tmp$V91)
-        colnames(input) <- c("year", "V2", "V3", "V5", "V7", "V10", "V19", "V26", 
+        colnames(input) <- c("year", "Field", "V2", "V3", "V5", "V7", "V10", "V19", "V26", 
                                 "V27", "V34", "V35", "Cppcp", "V37", "V47", 
                                 "Cpplp", "V57", "V71", "V72", "V73", 
                                 "V79", "V85", "V86", "V91")
@@ -145,12 +145,12 @@ for(i in 1:80){
     }
     # f262
     if(i == f26[p, 1] && p<dim(f26)[1]+1){
-        input <- cbind.data.frame(tmp$year, tmp$V2, tmp$V3, tmp$V5, tmp$V7, tmp$V10, tmp$V19, 
+        input <- cbind.data.frame(tmp$year, rep("Banking", length(tmp$year)), tmp$V2, tmp$V3, tmp$V5, tmp$V7, tmp$V10, tmp$V19, 
                                      tmp$V26, tmp$V27, tmp$V34, tmp$V35, tmp$Cpp, tmp$V37, 
                                      tmp$V47, tmp$V48 + tmp$V49 + tmp$V50 + tmp$V51, tmp$V57, 
                                      tmp$V71, tmp$V72, tmp$V73, tmp$V79, tmp$V85, tmp$V86, 
                                      tmp$V91)
-        colnames(input) <- c("year", "V2", "V3", "V5", "V7", "V10", "V19", "V26", 
+        colnames(input) <- c("year", "Field", "V2", "V3", "V5", "V7", "V10", "V19", "V26", 
                                 "V27", "V34", "V35", "Cppcp", "V37", "V47", "Cpplp", 
                              "V57", "V71", "V72", "V73", "V79", "V85", "V86", 
                                 "V91")
@@ -209,8 +209,8 @@ for(i in 1:80){
     name <- tmpfile[i]
     tmp <- read.csv(listFiles[i])
     ratios <- computeRatios(ratios, tmp)
-    ratios <- cbind(tmp$year, rep(i, length(tmp$year)), ratios)
-    colnames(ratios) <- c("year", "id", "QRA", "LRA", "CRA", "RTR", "ITR", "NWR", "ATR", 
+    ratios <- cbind(tmp$year, rep(i, length(tmp$year)), tmp$Field, ratios)
+    colnames(ratios) <- c("year", "id", "Field", "QRA", "LRA", "CRA", "RTR", "ITR", "NWR", "ATR", 
                           "ETR", "FAT", "LTA", "CAT", "GPM", "EBI", "NPM", "REQ", 
                           "ROA", "CAS", "ICU", "CEQ", "LTE", "STF", "STD", "ICR", "DER", "LER", "TFD")
     write.table(ratios, file = paste("cleanData/", name, sep = ""), sep = ",", quote = F, row.names = F)
