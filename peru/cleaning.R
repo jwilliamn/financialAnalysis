@@ -209,7 +209,7 @@ for(i in 1:80){
     name <- tmpfile[i]
     tmp <- read.csv(listFiles[i])
     ratios <- computeRatios(ratios, tmp)
-    ratios <- cbind(tmp$year, rep(i, length(tmp$year)), tmp$Field, ratios)
+    ratios <- cbind(tmp$year, rep(i, length(tmp$year)), levels(tmp$Field), ratios)
     colnames(ratios) <- c("year", "id", "Field", "QRA", "LRA", "CRA", "RTR", "ITR", "NWR", "ATR", 
                           "ETR", "FAT", "LTA", "CAT", "GPM", "EBI", "NPM", "REQ", 
                           "ROA", "CAS", "ICU", "CEQ", "LTE", "STF", "STD", "ICR", "DER", "LER", "TFD")
