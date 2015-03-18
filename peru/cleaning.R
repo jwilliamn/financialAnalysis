@@ -3,7 +3,7 @@
 setwd('/home/williamn/Repository/financialAnalysis/peru')
 listFiles <- list.files("rawData", full.names = TRUE)
 
-for(i in 1:80){
+for(i in 1:length(listFiles)){
     name <- listFiles[i]
     tmp <- read.csv(listFiles[i])
     tmp <- as.data.frame(t(tmp))
@@ -13,16 +13,16 @@ for(i in 1:80){
 
 # Check whether the file has all the required variables
 check <- data.frame()
-for(i in 1:80){
+for(i in 1:length(listFiles)){
     tmp<- read.csv(listFiles[i])
     check <- rbind(check, c(i, dim(tmp)[1], dim(tmp)[2]))
 }
-check$X176L <- factor(check$X176L)
+check$X127L <- factor(check$X127L)
 
 # Subsetting the 3 different groups of variables found
-f127 <- check[check$X176L == 127,]
-f176 <- check[check$X176L == 176,]
-f262 <- check[check$X176L == 262,]
+f127 <- check[check$X127L == 127,]
+f176 <- check[check$X127L == 176,]
+f262 <- check[check$X127L == 262,]
 
 # Function to get the year using substr and nchar
 substrRight <- function(x, n){
@@ -33,7 +33,7 @@ substrRight <- function(x, n){
 m <- 1
 n <- 1
 p <- 1
-for(i in 1:80){
+for(i in 1:length(listFiles)){
     arranged <- data.frame()
     name <- listFiles[i]
     tmp <- read.csv(listFiles[i])
@@ -99,22 +99,22 @@ for(i in 1:80){
 }
 
 # Standarizing the files (same financial variables)
-check <- data.frame()
-for(i in 1:80){
+checks <- data.frame()
+for(i in 1:length(listFiles)){
     tmp<- read.csv(listFiles[i])
-    check <- rbind(check, c(i, dim(tmp)[1], dim(tmp)[2]))
+    checks <- rbind(checks, c(i, dim(tmp)[1], dim(tmp)[2]))
 }
-check$X28L <- factor(check$X28L)
+checks$X25L <- factor(checks$X25L)
 
 # subsetting
-f25 <- check[check$X28L == 25,] # antes f127
-f26 <- check[check$X28L == 26,] # antes f262
-f28 <- check[check$X28L == 28,] # antes f176
+f25 <- checks[checks$X25L == 25,] # antes f127
+f26 <- checks[checks$X25L == 26,] # antes f262
+f28 <- checks[checks$X25L == 28,] # antes f176
 
 m <- 1
 n <- 1
 p <- 1
-for(i in 1:80){
+for(i in 1:length(listFiles)){
     input <- data.frame()
     name <- listFiles[i]
     tmp <- read.csv(listFiles[i])
@@ -204,7 +204,7 @@ computeRatios <- function(ratios, tmp){
     ratios
 }
 
-for(i in 1:80){
+for(i in 1:length(listFiles)){
     ratios <- data.frame()
     name <- tmpfile[i]
     tmp <- read.csv(listFiles[i])
