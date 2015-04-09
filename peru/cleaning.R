@@ -53,10 +53,10 @@ for(i in 1:length(listFiles)){
     }
     # f127
     if(i == f127[m, 1] && m<dim(f127)[1]+1){
-        arranged <- cbind.data.frame(year, tmp$V2, tmp$V3, tmp$V4, tmp$V12, tmp$V1, tmp$V20, 
+        arranged <- cbind.data.frame(year, tmp$V2, tmp$V3, tmp$V4, tmp$V12, rep(0, dim(tmp)[1]), tmp$V20, 
                                      tmp$V27, tmp$V28, tmp$V38, tmp$V39, tmp$V41, tmp$V42, 
                                      tmp$V43, tmp$V44, tmp$V51, tmp$V54, tmp$V61, tmp$V80, 
-                                     tmp$V1, tmp$V94, tmp$V107, tmp$V110, tmp$V112, tmp$V117)
+                                     rep(0, dim(tmp)[1]), tmp$V94, tmp$V107, tmp$V110, tmp$V112, tmp$V117)
         colnames(arranged) <- c("year", "V2", "V3", "V5", "V7", "V10", "V19", "V26", 
                                 "V27", "V34", "V35", "V38", "V39", "V40", "V37", "V47", 
                                 "Cpp", "V57", "V71", "V72", "V73", 
@@ -78,10 +78,10 @@ for(i in 1:length(listFiles)){
     }
     # f262
     if(i == f262[p, 1] && p<dim(f262)[1]+1){
-        arranged <- cbind.data.frame(year, tmp$V2, tmp$V3, tmp$V4, tmp$V31, tmp$V1, tmp$V14, 
+        arranged <- cbind.data.frame(year, tmp$V2, tmp$V3, tmp$V4, tmp$V31, rep(0, dim(tmp)[1]), tmp$V14, 
                                      tmp$V48, tmp$V49, tmp$V60, tmp$V61, tmp$V81, tmp$V75, 
                                      tmp$V86, tmp$V87, tmp$V88, tmp$V89, tmp$V90, tmp$V106, 
-                                     tmp$V132, tmp$V1, tmp$V1, tmp$V202, tmp$V210, tmp$V212, 
+                                     tmp$V132, rep(0, dim(tmp)[1]), tmp$V132, tmp$V202, tmp$V210, tmp$V212, 
                                      tmp$V213)
         colnames(arranged) <- c("year", "V2", "V3", "V5", "V7", "V10", "V19", "V26", 
                                 "V27", "V34", "V35", "Cpp", "V37", "V47", "V48", "V49", "V50",
@@ -195,7 +195,7 @@ computeRatios <- function(ratios, tmp){
     # Solvency ratios
     STF <- tmp$Cppcp/tmp$V34 # shortTermFinanDebtToTotalDebt
     STD <- tmp$V35/tmp$V34 # shortTermDebtToTotalDebt
-    ICR <- tmp$V85/tmp$V86 # interestCoverageRatio
+    ICR <- tmp$V85/abs(tmp$V86) # interestCoverageRatio
     DER <- tmp$V34/tmp$V57 # debtRatio
     LER <- tmp$V34/tmp$V2 # leverageRatio
     TFD <- (tmp$Cppcp + tmp$Cpplp)/tmp$V34 # totalFinanDebtToTotalDebt

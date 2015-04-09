@@ -5,9 +5,13 @@ listFiles <- list.files("cleanData", full.names = TRUE)
 
 examples <- data.frame()
 for(y in 2013:2000){
+    n <- 1
     for(i in 1:length(listFiles)){
-        tmp <- read.csv(listFiles[i])
-        examples <- rbind(examples, tmp[which(tmp$year==y),])
+        if(i == f28[n, 1] && n<dim(f28)[1]+1){
+            tmp <- read.csv(listFiles[i])
+            examples <- rbind(examples, tmp[which(tmp$year==y),])
+            n <- n + 1
+        }
     }
 }
 
