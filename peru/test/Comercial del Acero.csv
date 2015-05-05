@@ -1,0 +1,177 @@
+No Consolidado,12/31/2012,12/31/2013
+ACTIVO,,
+Activo total,422984,437150
+Activo Corriente,340853,350887
+Tot ac co dist ac p/disp,340853,350887
+Efectivo,25806,31643
+Inversiones CP,0,179
+Cuentas por cobrar CP,96613,93144
+Otr Cuentas p Cobr CP,15673,10242
+Otr cuent por cobrar CP,140,91
+Inventario,202521,215588
+Activos Biologicos CP,0,0
+Cuen cobr impuestos corr,0,0
+Gast pagados por antic,101,0
+Otros Activos CP,0,0
+Ac ncor p/disp mpv o pro,0,0
+Ac nco p/dis cl man p/ve,0,0
+Ac nc p/di cl dis a prop,0,0
+Activo no Corriente,82131,86263
+Inversiones Financieras,0,0
+Invers al Metodo d/Parti,0,0
+Creditos Comerciales LP,0,0
+Otr cuentas p cobr LP,0,0
+Doc por Cob Emp Relc LP,0,0
+Activos Biologicos LP,0,0
+Inversiones en Inmuebles,0,0
+"Prop, planta y equi neto",81145,85183
+Intangibles y agio,193,201
+IR Partic Diferid Activo,792,878
+Credito Mercantil,0,0
+Otros Activos LP,0,0
+,,
+PASIVO,,
+Pasivo + patrimonio neto,422984,437150
+Pasivo total,225683,233735
+Pasivo Corriente,202897,220368
+Tot pa co dist pa m p/ve,202897,220368
+Deudas Financieras CP,185553,204499
+Provedores CP,4565,3092
+Otros Pas no Comerc CP,5421,4977
+Letras por Pagar CP,5459,4824
+Provisiones CP,0,1276
+Deu Fin LP Porcion CP,0,1701
+Prov cor p/bene a emplea,1899,0
+Otros CP,0,0
+Pasivos mantenid p/venta,0,0
+Pasivo no Corriente,22785,13366
+Prestamos LP,1037,2084
+Cuentas por Pagar LP,0,0
+Otras Cuentas Pagar LP,0,0
+Obligaciones LP,0,0
+Imp Rend y Part Pasv Dif,11360,11283
+Provisiones LP,1377,0
+Prov no co p/bene a empl,0,0
+Otros LP,0,0
+Ingresos Perc por Adelan,9012,0
+Patrim neto consolidado,197301,203415
+Patrimonio neto,197301,203415
+Capital social,140010,164574
+Capital Adicional,0,0
+Part Patrim del Trabajo,0,0
+Acciones propias en cart,0,0
+Otras reservas,19100,20389
+Utilidades retenidas,33361,13696
+Resultados no Realizados,4831,4756
+Int min(part no control),0,0
+,,
+EST RESULT,,
+Meses,12,12
+Origen de los datos,divulgado,divulgado
+,,
+Ingresos netos,519146,492650
+Costo de Ventas,466404,431371
+Resultado Bruto,52742,61279
+Gastos con Ventas,22534,22970
+Gastos administrativos,6474,6646
+Ingr (perd) venta activo,0,-205
+Otros Ingresos,1648,1528
+Otros Gastos,-583,0
+Result operativo EBIT,24799,32987
+Ingresos Financieros,7333,4134
+Gastos Financieros,-7941,-17555
+Diferencias de Cambio,0,0
+Dividendos,0,0
+Ga(pe) dif vl lib/vl jus,0,0
+Resultado antes impuest,24191,19566
+Impuesto a las gananc,7934,5870
+Utild oper continuadas,16257,13696
+Operac descontinuadas,0,0
+Utilidad Consolidada,16257,13696
+Int min(part no control),0,0
+Ganancia/perdida neta,16257,13696
+,,
+FLUJO CAJA,,
+Meses,12,12
+Origen de los datos,divulgado,divulgado
+,,
+Recurs Generd por la Op,-63995,-5717
+Cobranza a clientes,509217,478882
+Comissiones y honorarios,0,0
+Cobro de Regalias,0,0
+Inter Rend NIncl Act Inv,0,0
+Reemb de imp a las ganan,0,-
+Dividendos Cobrados,0,0
+Otros Cobr en Efectivo,0,0
+Pagos a proveedores,-508266,-449102
+Pago de Remuneraciones,-13571,-7200
+Pago de Tributos,-15353,-
+Inter Rend NIncl ActFin,-25805,-6577
+Dividen (no inc atv fin),0,0
+Pago de Regalias,0,-
+Otros Pagos en Efectivo,-10217,0
+Recurs Generd en Inver,-4738,-6493
+Cob pr reemb de ant y pr,0,0
+Ptmos Otorg a Empr Relac,0,0
+Ingres Venta Valores,0,0
+"Cobr cont fut,a te,op,pe",0,0
+Vta Subs/Otr UNid Negoci,0,0
+Ven neg conj neto ef des,0,0
+Venta de Inver Perman,0,0
+Venta de Inmueb Maq Equi,0,0
+Venta de Activos Intangi,0,0
+Imp proc ot act larg plz,0,0
+Interes recibido,0,0
+Dividendos Recibidos,0,0
+Reem imp a la gana (inv),0,0
+Otr Ingr Efec de Actvd,0,0
+Ante de efec y pres a te,0,0
+Prestamos Otorgados Vinc,0,0
+Pagos por Comp Valores,0,0
+"Pag cont fut,a te,opc,pe",0,0
+Compra de Bienes de Uso,0,0
+Pg p/ad neg cj net ef ad,0,0
+Util compra part no cont,0,0
+Pagos p/ adq prop de inv,0,0
+Compra de prop de invers,-4717,-6449
+Desem p/Trab In/Maq/Equi,0,0
+Adquisicion Bien Intang,-22,-43
+Compra otr act largo plz,0,0
+Impue a las gananc (inv),0,0
+Otr Pag Efec de Activd,0,0
+Recurs Generd por Finac,73103,18445
+Emision de Obliga Financ,78833,-
+Ingr Prestamos CP y LP,0,-
+Prest a entid relacionad,0,0
+Emiss de Acc de Pago,0,-
+Venta Accion(Ctas)Propia,0,-
+Reem imp a la gana (fin),0,-
+Otr Ingr Efec de Actvd,0,-
+Amort Financiam Bursatil,0,-
+Amort o Pago de Obl Fina,0,-
+Pag de prest a ent relac,0,0
+Reemb pas por arrend fin,0,0
+Adquis Acciones Prop,0,0
+Pag p/ot part en el patr,0,0
+Intereses y Provech Simi,0,0
+Dividendos,-5729,-4014
+Impue a las gananc (fin),0,-
+Otr Pagos Efec de Activ,0,-
+Inc neto(di) ef ant cam,4370,6235
+Efecto Variac Cambial,0,0
+Incr neto en efec e inv,4370,6235
+Fondos al Inicio,21435,25408
+Fondos al Cierre,25806,31643
+,,
+Depreciacion y amortiz,-,-
+Ebitda,-,-
+,,
+CANT ACCION,,
+Total de acciones outst,136284,162699
+,,
+DIVERSOS,,
+Fecha del Balance,12/31/2012,12/31/2013
+Fecha da la Moneda,12/31/2012,12/31/2013
+Fecha ult rectificacion,8/2/2013,3/11/2014
+Formato del balance,Ind&ComPe,Ind&ComPe
+Consolidado,No,No

@@ -1,0 +1,177 @@
+Consolidado,12/31/2010
+ACTIVO,
+Activo total,717273
+Activo Corriente,82802
+Tot ac co dist ac p/disp,-
+Efectivo,36640
+Inversiones CP,0
+Cuentas por cobrar CP,8283
+Otr Cuentas p Cobr CP,0
+Otr cuent por cobrar CP,21212
+Inventario,16636
+Activos Biologicos CP,0
+Cuen cobr impuestos corr,-
+Gast pagados por antic,30
+Otros Activos CP,0
+Ac ncor p/disp mpv o pro,-
+Ac nco p/dis cl man p/ve,-
+Ac nc p/di cl dis a prop,-
+Activo no Corriente,634471
+Inversiones Financieras,0
+Invers al Metodo d/Parti,0
+Creditos Comerciales LP,0
+Otr cuentas p cobr LP,0
+Doc por Cob Emp Relc LP,0
+Activos Biologicos LP,0
+Inversiones en Inmuebles,0
+"Prop, planta y equi neto",252912
+Intangibles y agio,232649
+IR Partic Diferid Activo,0
+Credito Mercantil,0
+Otros Activos LP,148910
+,
+PASIVO,
+Pasivo + patrimonio neto,717273
+Pasivo total,361874
+Pasivo Corriente,43267
+Tot pa co dist pa m p/ve,-
+Deudas Financieras CP,0
+Provedores CP,1082
+Otros Pas no Comerc CP,16104
+Letras por Pagar CP,18365
+Provisiones CP,7574
+Deu Fin LP Porcion CP,141
+Prov cor p/bene a emplea,-
+Otros CP,-
+Pasivos mantenid p/venta,0
+Pasivo no Corriente,318608
+Prestamos LP,215872
+Cuentas por Pagar LP,0
+Otras Cuentas Pagar LP,79
+Obligaciones LP,0
+Imp Rend y Part Pasv Dif,92175
+Provisiones LP,10482
+Prov no co p/bene a empl,-
+Otros LP,-
+Ingresos Perc por Adelan,0
+Patrim neto consolidado,-
+Patrimonio neto,355398
+Capital social,59691
+Capital Adicional,273177
+Part Patrim del Trabajo,1534
+Acciones propias en cart,-
+Otras reservas,-
+Utilidades retenidas,31125
+Resultados no Realizados,0
+Int min(part no control),-
+,
+EST RESULT,
+Meses,12
+Origen de los datos,divulgado
+,
+Ingresos netos,16611
+Costo de Ventas,16290
+Resultado Bruto,321
+Gastos con Ventas,1682
+Gastos administrativos,46
+Ingr (perd) venta activo,0
+Otros Ingresos,5154
+Otros Gastos,-33343
+Result operativo EBIT,-29595
+Ingresos Financieros,274
+Gastos Financieros,-5327
+Diferencias de Cambio,-
+Dividendos,0
+Ga(pe) dif vl lib/vl jus,-
+Resultado antes impuest,-35923
+Impuesto a las gananc,-13467
+Utild oper continuadas,-22456
+Operac descontinuadas,0
+Utilidad Consolidada,-
+Int min(part no control),-
+Ganancia/perdida neta,-22456
+,
+FLUJO CAJA,
+Meses,12
+Origen de los datos,divulgado
+,
+Recurs Generd por la Op,66744
+Cobranza a clientes,-
+Comissiones y honorarios,-
+Cobro de Regalias,-
+Inter Rend NIncl Act Inv,-
+Reemb de imp a las ganan,-
+Dividendos Cobrados,-
+Otros Cobr en Efectivo,-
+Pagos a proveedores,-
+Pago de Remuneraciones,-
+Pago de Tributos,-
+Inter Rend NIncl ActFin,-
+Dividen (no inc atv fin),-
+Pago de Regalias,-
+Otros Pagos en Efectivo,-
+Recurs Generd en Inver,-62244
+Cob pr reemb de ant y pr,-
+Ptmos Otorg a Empr Relac,-
+Ingres Venta Valores,-
+"Cobr cont fut,a te,op,pe",-
+Vta Subs/Otr UNid Negoci,-
+Ven neg conj neto ef des,-
+Venta de Inver Perman,-
+Venta de Inmueb Maq Equi,-
+Venta de Activos Intangi,-
+Imp proc ot act larg plz,-
+Interes recibido,-
+Dividendos Recibidos,-
+Reem imp a la gana (inv),-
+Otr Ingr Efec de Actvd,-
+Ante de efec y pres a te,-
+Prestamos Otorgados Vinc,-
+Pagos por Comp Valores,-
+"Pag cont fut,a te,opc,pe",-
+Compra de Bienes de Uso,-
+Pg p/ad neg cj net ef ad,-
+Util compra part no cont,-
+Pagos p/ adq prop de inv,-
+Compra de prop de invers,-
+Desem p/Trab In/Maq/Equi,-
+Adquisicion Bien Intang,-
+Compra otr act largo plz,-
+Impue a las gananc (inv),-
+Otr Pag Efec de Activd,-
+Recurs Generd por Finac,18748
+Emision de Obliga Financ,-
+Ingr Prestamos CP y LP,-
+Prest a entid relacionad,-
+Emiss de Acc de Pago,-
+Venta Accion(Ctas)Propia,-
+Reem imp a la gana (fin),-
+Otr Ingr Efec de Actvd,-
+Amort Financiam Bursatil,-
+Amort o Pago de Obl Fina,-
+Pag de prest a ent relac,-
+Reemb pas por arrend fin,-
+Adquis Acciones Prop,-
+Pag p/ot part en el patr,-
+Intereses y Provech Simi,-
+Dividendos,-
+Impue a las gananc (fin),-
+Otr Pagos Efec de Activ,-
+Inc neto(di) ef ant cam,-
+Efecto Variac Cambial,0
+Incr neto en efec e inv,23248
+Fondos al Inicio,13392
+Fondos al Cierre,36639
+,
+Depreciacion y amortiz,-
+Ebitda,-
+,
+CANT ACCION,
+Total de acciones outst,58500
+,
+DIVERSOS,
+Fecha del Balance,12/31/2010
+Fecha da la Moneda,12/31/2010
+Fecha ult rectificacion,7/20/2011
+Formato del balance,Ind&ComPe
+Consolidado,Si

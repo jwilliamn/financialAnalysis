@@ -2,6 +2,8 @@
 
 setwd('/home/williamn/Repository/financialAnalysis/peru')
 listFiles <- list.files("rawData", full.names = TRUE)
+listTemp <- list.files("test", full.names = TRUE)
+
 
 for(i in 1:length(listFiles)){
     name <- listFiles[i]
@@ -13,8 +15,8 @@ for(i in 1:length(listFiles)){
 
 # Check whether the file has all the required variables
 check <- data.frame()
-for(i in 1:length(listFiles)){
-    tmp<- read.csv(listFiles[i])
+for(i in 1:length(listTemp)){
+    tmp <- read.csv(listTemp[i])
     check <- rbind(check, c(i, dim(tmp)[1], dim(tmp)[2]))
 }
 check$X127L <- factor(check$X127L)
@@ -23,6 +25,12 @@ check$X127L <- factor(check$X127L)
 f127 <- check[check$X127L == 127,]
 f176 <- check[check$X127L == 176,]
 f262 <- check[check$X127L == 262,]
+
+# Names of companies
+names <- c()
+for(k in 1:dim(f176)[1]){
+    names <- c(names, listTemp[f176[k,1]])
+}
 
 # Function to get the year using substr and nchar
 substrRight <- function(x, n){
